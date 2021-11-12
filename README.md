@@ -1,5 +1,6 @@
 ﻿### WinAppSDK1.0.0 App
-A WinUI 3 application that helps you convert address data to Latitude and Longitude values and route date for use with the Google Maps javascript API.
+A WinUI 3 application that is ported from a Template Studio solution to use the WindowsApp SDK 1.0.0 Preview 3.
+It contains all major features like activation, navigation, different activation handlers, SQL Server stuff, dialog handling and Toast Notifications.
 
 ## File Structure
 ```
