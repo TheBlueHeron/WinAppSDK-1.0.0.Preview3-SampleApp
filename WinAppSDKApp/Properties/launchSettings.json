@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WinAppSDKApp": {
+      "commandName": "Project",
+      "commandLineArgs": "Boohoo"
+    }
+  }
+}
