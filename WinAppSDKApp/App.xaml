@@ -1,5 +1,5 @@
 ﻿<Application
-    x:Class="GoogleMapper.App"
+    x:Class="WinAppSDKApp.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:Microsoft.UI.Xaml.Controls">

@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.Services;
-using GoogleMapper.ViewModels;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Services;
+using WinAppSDKApp.ViewModels;
 using Microsoft.UI.Xaml;
 using System;
 using System.Threading.Tasks;
 
-namespace GoogleMapper.Activation
+namespace WinAppSDKApp.Activation
 {
     /// <summary>
     /// The default <see cref="IActivationHandler"/>.

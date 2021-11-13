@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using GoogleMapper.Contracts.ViewModels;
+using WinAppSDKApp.Contracts.ViewModels;
 
-namespace GoogleMapper.ViewModels
+namespace WinAppSDKApp.ViewModels
 {
     public class MainViewModel : ObservableRecipient, INavigationAware
     {

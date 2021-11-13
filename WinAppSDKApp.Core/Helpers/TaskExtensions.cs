@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace GoogleMapper.Core.Helpers
+namespace WinAppSDKApp.Core.Helpers
 {
     public static class TaskExtensions
     {

@@ -1,10 +1,10 @@
 ﻿using CommunityToolkit.WinUI.Helpers;
-using GoogleMapper.Views;
+using WinAppSDKApp.Views;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml.Controls;
 using System;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     public sealed class FirstRunDisplayService
     {

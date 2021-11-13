@@ -1,6 +1,6 @@
 ﻿using Windows.ApplicationModel.Resources;
 
-namespace GoogleMapper.Helpers
+namespace WinAppSDKApp.Helpers
 {
     /// <summary>
     /// Helper functions for retrieval of localized resources.

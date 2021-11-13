@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml.Data;
 using System;
 
-namespace GoogleMapper.Helpers
+namespace WinAppSDKApp.Helpers
 {
     /// <summary>
     /// Converts <see cref="Enum"/> values to <see cref="bool"/> values.

@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace GoogleMapper.Contracts.Services
+namespace WinAppSDKApp.Contracts.Services
 {
     /// <summary>
-    /// Interface definition for the <see cref="GoogleMapper.Services.NavigationViewService"/>.
+    /// Interface definition for the <see cref="WinAppSDKApp.Services.NavigationViewService"/>.
     /// </summary>
     public interface INavigationViewService
     {
@@ -15,7 +15,7 @@ namespace GoogleMapper.Contracts.Services
         IList<object> MenuItems { get; }
 
         /// <summary>
-        /// The menu item for navigation to the <see cref="GoogleMapper.Views.SettingsPage"/>.
+        /// The menu item for navigation to the <see cref="WinAppSDKApp.Views.SettingsPage"/>.
         /// </summary>
         object SettingsItem { get; }
 

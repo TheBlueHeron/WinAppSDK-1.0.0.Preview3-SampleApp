@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace GoogleMapper.Views
+namespace WinAppSDKApp.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.WinUI.Notifications;
-using GoogleMapper.Activation;
+using WinAppSDKApp.Activation;
 using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation.Collections;
 using Windows.UI.Notifications;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     public class ToastNotificationsService : ActivationHandler<ToastNotificationActivatedEventArgsMock>
     {

@@ -1,12 +1,12 @@
-﻿using GoogleMapper.Contracts.Services;
-using GoogleMapper.Helpers;
-using GoogleMapper.ViewModels;
+﻿using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Helpers;
+using WinAppSDKApp.ViewModels;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     /// <summary>
     /// Service that handles a <see cref="NavigationView"/>, using a <see cref="NavigationService"/> and a <see cref="PageService"/>.
@@ -30,7 +30,7 @@ namespace GoogleMapper.Services
             => _navigationView.MenuItems;
 
         /// <summary>
-        /// The menu item for navigation to the <see cref="GoogleMapper.Views.SettingsPage"/>.
+        /// The menu item for navigation to the <see cref="WinAppSDKApp.Views.SettingsPage"/>.
         /// </summary>
         public object SettingsItem
             => _navigationView.SettingsItem;
@@ -40,10 +40,10 @@ namespace GoogleMapper.Services
         #region Construction
 
         /// <summary>
-        /// Creates a new NavigationViewService, using the given <see cref="GoogleMapper.Contracts.Services.INavigationService"/> and <see cref="GoogleMapper.Contracts.Services.IPageService"/>.
+        /// Creates a new NavigationViewService, using the given <see cref="WinAppSDKApp.Contracts.Services.INavigationService"/> and <see cref="WinAppSDKApp.Contracts.Services.IPageService"/>.
         /// </summary>
-        /// <param name="navigationService">The <see cref="GoogleMapper.Contracts.Services.INavigationService"/> to use</param>
-        /// <param name="pageService">The <see cref="GoogleMapper.Contracts.Services.IPageService"/> to use</param>
+        /// <param name="navigationService">The <see cref="WinAppSDKApp.Contracts.Services.INavigationService"/> to use</param>
+        /// <param name="pageService">The <see cref="WinAppSDKApp.Contracts.Services.IPageService"/> to use</param>
         public NavigationViewService(INavigationService navigationService, IPageService pageService)
         {
             _navigationService = navigationService;

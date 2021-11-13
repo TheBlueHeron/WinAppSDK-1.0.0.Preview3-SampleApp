@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
-using GoogleMapper.Contracts.Services;
+using WinAppSDKApp.Contracts.Services;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.Xaml.Interactivity;
 
-namespace GoogleMapper.Behaviors
+namespace WinAppSDKApp.Behaviors
 {
     public class NavigationViewHeaderBehavior : Behavior<NavigationView>
     {

@@ -1,13 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.Helpers;
-using GoogleMapper.ViewModels;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Helpers;
+using WinAppSDKApp.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 using Windows.System;
+using Windows.UI.ViewManagement;
+using Microsoft.UI.Xaml.Media;
 
-namespace GoogleMapper.Views
+namespace WinAppSDKApp.Views
 {
     // TODO WTS: Change the icons and titles for all NavigationViewItems in ShellPage.xaml.
     public sealed partial class ShellPage : Page
@@ -26,6 +28,17 @@ namespace GoogleMapper.Views
             txtTitle.Text = ResourceExtensions.AppTitleKey.GetLocalized();
             ViewModel.NavigationService.Frame = shellFrame;
             ViewModel.NavigationViewService.Initialize(navigationView);
+            ActualThemeChanged += OnActualThemeChanged;
+        }
+
+        /// <summary>
+        /// Makes sure that the title bar obeys the system theme.
+        /// </summary>
+        private void OnActualThemeChanged(FrameworkElement sender, object e)
+        {
+            UISettings DefaultTheme = new();
+
+            txtTitle.Foreground = new SolidColorBrush(DefaultTheme.GetColorValue(UIColorType.Foreground));
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)

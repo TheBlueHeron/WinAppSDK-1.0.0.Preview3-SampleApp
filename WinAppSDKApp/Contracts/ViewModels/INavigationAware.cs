@@ -1,4 +1,4 @@
-﻿namespace GoogleMapper.Contracts.ViewModels
+﻿namespace WinAppSDKApp.Contracts.ViewModels
 {
     public interface INavigationAware
     {

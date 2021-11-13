@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System;
 
-namespace GoogleMapper.BackgroundTasks
+namespace WinAppSDKApp.BackgroundTasks
 {
     /// <summary>
     /// Sample <see cref="BackgroundTask"/>.

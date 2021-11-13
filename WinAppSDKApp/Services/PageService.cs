@@ -1,13 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.ViewModels;
-using GoogleMapper.Views;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.ViewModels;
+using WinAppSDKApp.Views;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     public class PageService : IPageService
     {

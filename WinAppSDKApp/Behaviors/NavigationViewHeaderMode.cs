@@ -1,4 +1,4 @@
-﻿namespace GoogleMapper.Behaviors
+﻿namespace WinAppSDKApp.Behaviors
 {
     public enum NavigationViewHeaderMode
     {

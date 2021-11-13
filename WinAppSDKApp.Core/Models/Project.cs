@@ -1,8 +1,8 @@
-﻿using GoogleMapper.Core.Contracts;
+﻿using WinAppSDKApp.Core.Contracts;
 using Microsoft.Data.SqlClient;
 using System;
 
-namespace GoogleMapper.Core.Models
+namespace WinAppSDKApp.Core.Models
 {
     /// <summary>
     /// Container for details on a project.

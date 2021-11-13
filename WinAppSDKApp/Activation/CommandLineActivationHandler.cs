@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 
-namespace GoogleMapper.Activation
+namespace WinAppSDKApp.Activation
 {
     /// <summary>
     /// <see cref="IActivationHandler"/> for commandline arguments.

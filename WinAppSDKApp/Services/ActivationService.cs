@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
-using GoogleMapper.Activation;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.Helpers;
-using GoogleMapper.Views;
+using WinAppSDKApp.Activation;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Helpers;
+using WinAppSDKApp.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using System;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     /// <summary>
     /// The <see cref="IActivationService"/> implementation of this app.

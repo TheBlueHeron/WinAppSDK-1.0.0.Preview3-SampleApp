@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 
-using GoogleMapper.ViewModels;
+using WinAppSDKApp.ViewModels;
 
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace GoogleMapper.Views
+namespace WinAppSDKApp.Views
 {
     public sealed partial class DataGridPage : Page
     {

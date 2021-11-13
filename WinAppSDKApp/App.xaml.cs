@@ -1,17 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
-using GoogleMapper.Activation;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.Core.Services;
-using GoogleMapper.Helpers;
-using GoogleMapper.Services;
-using GoogleMapper.ViewModels;
-using GoogleMapper.Views;
+using WinAppSDKApp.Activation;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Core.Services;
+using WinAppSDKApp.Helpers;
+using WinAppSDKApp.Services;
+using WinAppSDKApp.ViewModels;
+using WinAppSDKApp.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using System;
 using Windows.ApplicationModel.Activation;
 
-namespace GoogleMapper
+namespace WinAppSDKApp
 {
     /// <summary>
     /// The <see cref="Application"/> instance.

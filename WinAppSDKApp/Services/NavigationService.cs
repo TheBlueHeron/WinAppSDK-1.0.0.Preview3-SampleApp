@@ -1,10 +1,10 @@
-﻿using GoogleMapper.Contracts.Services;
-using GoogleMapper.Contracts.ViewModels;
-using GoogleMapper.Helpers;
+﻿using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Contracts.ViewModels;
+using WinAppSDKApp.Helpers;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     /// <summary>
     /// The <see cref="INavigationService"/> implementation of this application.

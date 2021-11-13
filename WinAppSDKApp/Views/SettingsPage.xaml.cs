@@ -1,10 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 
-using GoogleMapper.ViewModels;
+using WinAppSDKApp.ViewModels;
 
 using Microsoft.UI.Xaml.Controls;
 
-namespace GoogleMapper.Views
+namespace WinAppSDKApp.Views
 {
     // TODO WTS: Change the URL for your privacy policy, currently set to https://YourPrivacyUrlGoesHere
     public sealed partial class SettingsPage : Page

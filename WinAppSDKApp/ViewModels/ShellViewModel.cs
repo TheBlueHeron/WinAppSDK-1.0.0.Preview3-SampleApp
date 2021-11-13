@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.Views;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Views;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace GoogleMapper.ViewModels
+namespace WinAppSDKApp.ViewModels
 {
     public class ShellViewModel : ObservableRecipient
     {

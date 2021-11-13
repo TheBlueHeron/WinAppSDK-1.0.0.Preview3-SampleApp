@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace GoogleMapper.Core.Contracts
+namespace WinAppSDKApp.Core.Contracts
 {
     internal interface IParsableFromDb
     {

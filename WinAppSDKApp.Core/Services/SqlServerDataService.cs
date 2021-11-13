@@ -1,13 +1,13 @@
-﻿using GoogleMapper.Core.Models;
+﻿using WinAppSDKApp.Core.Models;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
-using GoogleMapper.Core.Contracts;
+using WinAppSDKApp.Core.Contracts;
 using System.Collections.Generic;
 using System.Data;
 using System;
 using System.Threading.Tasks;
 
-namespace GoogleMapper.Core.Services
+namespace WinAppSDKApp.Core.Services
 {
     /// <summary>
     /// Handles communication with the SQL Server data source.

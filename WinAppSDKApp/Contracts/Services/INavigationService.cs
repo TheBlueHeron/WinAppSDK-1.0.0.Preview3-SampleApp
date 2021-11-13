@@ -1,10 +1,10 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace GoogleMapper.Contracts.Services
+namespace WinAppSDKApp.Contracts.Services
 {
     /// <summary>
-    /// Interface definition for the <see cref="GoogleMapper.Services.NavigationService"/>.
+    /// Interface definition for the <see cref="WinAppSDKApp.Services.NavigationService"/>.
     /// </summary>
     public interface INavigationService
     {

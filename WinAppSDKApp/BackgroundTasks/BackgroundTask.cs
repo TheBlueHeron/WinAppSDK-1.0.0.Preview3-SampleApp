@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 
-namespace GoogleMapper.BackgroundTasks
+namespace WinAppSDKApp.BackgroundTasks
 {
     /// <summary>
     /// Base class for background tasks.

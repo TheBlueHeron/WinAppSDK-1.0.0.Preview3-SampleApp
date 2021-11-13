@@ -1,10 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 
-using GoogleMapper.ViewModels;
+using WinAppSDKApp.ViewModels;
 
 using Microsoft.UI.Xaml.Controls;
 
-namespace GoogleMapper.Views
+namespace WinAppSDKApp.Views
 {
     public sealed partial class MainPage : Page
     {

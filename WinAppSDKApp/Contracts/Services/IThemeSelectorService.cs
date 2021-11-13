@@ -1,10 +1,10 @@
 ﻿using Microsoft.UI.Xaml;
 using System.Threading.Tasks;
 
-namespace GoogleMapper.Contracts.Services
+namespace WinAppSDKApp.Contracts.Services
 {
     /// <summary>
-    /// Interface definition for the <see cref="GoogleMapper.Services.ThemeSelectorService"/>.
+    /// Interface definition for the <see cref="WinAppSDKApp.Services.ThemeSelectorService"/>.
     /// </summary>
     public interface IThemeSelectorService
     {

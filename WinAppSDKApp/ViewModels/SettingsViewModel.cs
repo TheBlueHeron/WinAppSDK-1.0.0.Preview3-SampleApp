@@ -1,13 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using GoogleMapper.Contracts.Services;
-using GoogleMapper.Helpers;
+using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Helpers;
 using Microsoft.UI.Xaml;
 //using Microsoft.Services.Store.Engagement;
 using System.Windows.Input;
 using Windows.ApplicationModel;
 
-namespace GoogleMapper.ViewModels
+namespace WinAppSDKApp.ViewModels
 {
     /// <summary>
     /// An <see cref="ObservableRecipient"/> that serves as the ViewModel for the <see cref="Views.SettingsPage"/>.

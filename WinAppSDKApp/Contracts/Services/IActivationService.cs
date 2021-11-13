@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 
-namespace GoogleMapper.Contracts.Services
+namespace WinAppSDKApp.Contracts.Services
 {
     /// <summary>
-    /// Interface definition for an <see cref="GoogleMapper.Services.ActivationService"/>.
+    /// Interface definition for an <see cref="WinAppSDKApp.Services.ActivationService"/>.
     /// </summary>
     public interface IActivationService
     {

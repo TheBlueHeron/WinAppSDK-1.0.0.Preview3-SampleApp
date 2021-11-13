@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 
-namespace GoogleMapper.Helpers
+namespace WinAppSDKApp.Helpers
 {
     public static class FrameExtensions
     {

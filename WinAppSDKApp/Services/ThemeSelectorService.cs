@@ -1,11 +1,11 @@
-﻿using GoogleMapper.Contracts.Services;
-using GoogleMapper.Helpers;
+﻿using WinAppSDKApp.Contracts.Services;
+using WinAppSDKApp.Helpers;
 using Microsoft.UI.Xaml;
 using System;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace GoogleMapper.Services
+namespace WinAppSDKApp.Services
 {
     public class ThemeSelectorService : IThemeSelectorService
     {

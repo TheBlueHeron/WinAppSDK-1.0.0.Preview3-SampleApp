@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace GoogleMapper.Helpers
+namespace WinAppSDKApp.Helpers
 {
     public class NavHelper
     {

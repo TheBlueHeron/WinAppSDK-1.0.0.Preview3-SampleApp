@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
-using GoogleMapper.Core.Models;
-using GoogleMapper.Core.Services;
+using WinAppSDKApp.Core.Models;
+using WinAppSDKApp.Core.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace GoogleMapper.ViewModels
+namespace WinAppSDKApp.ViewModels
 {
     public class DataViewModel : ObservableObject
     {

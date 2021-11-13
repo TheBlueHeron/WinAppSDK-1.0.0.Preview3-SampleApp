@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace GoogleMapper.Contracts.Services
+namespace WinAppSDKApp.Contracts.Services
 {
     /// <summary>
-    /// Interface definition for the <see cref="GoogleMapper.Services.PageService"/>.
+    /// Interface definition for the <see cref="WinAppSDKApp.Services.PageService"/>.
     /// </summary>
     public interface IPageService
     {

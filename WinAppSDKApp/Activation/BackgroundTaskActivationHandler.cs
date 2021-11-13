@@ -1,5 +1,5 @@
-﻿using GoogleMapper.BackgroundTasks;
-using GoogleMapper.Core.Helpers;
+﻿using WinAppSDKApp.BackgroundTasks;
+using WinAppSDKApp.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
 
-namespace GoogleMapper.Activation
+namespace WinAppSDKApp.Activation
 {
     public class BackgroundTaskActivationHandler : ActivationHandler<BackgroundActivatedEventArgs>
     {

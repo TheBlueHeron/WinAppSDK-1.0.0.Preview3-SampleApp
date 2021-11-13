@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace GoogleMapper.Activation
+namespace WinAppSDKApp.Activation
 {
     /// <summary>
     /// Base class for <see cref="IActivationHandler"/> implementations.

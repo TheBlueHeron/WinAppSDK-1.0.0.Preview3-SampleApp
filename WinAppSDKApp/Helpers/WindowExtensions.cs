@@ -3,7 +3,7 @@ using PInvoke;
 using System;
 using WinRT.Interop;
 
-namespace GoogleMapper.Helpers
+namespace WinAppSDKApp.Helpers
 {
     /// <summary>
     /// Helper functions for <see cref="Window"/> objects.
