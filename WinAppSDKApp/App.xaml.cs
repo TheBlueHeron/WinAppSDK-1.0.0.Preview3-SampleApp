@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using System;
 using Windows.ApplicationModel.Activation;
+using WinAppSDKApp.Core.Logging;
 
 namespace WinAppSDKApp
 {
@@ -62,7 +63,8 @@ namespace WinAppSDKApp
                 .AddTransient<IActivationHandler, BackgroundTaskActivationHandler>()
                 .AddTransient<IActivationHandler, ToastNotificationsService>()
 
-                .AddSingleton<IThemeSelectorService, ThemeSelectorService>() // Services
+                .AddSingleton<ILoggingService, DebugLoggingService>() // Services
+                .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
                 .AddSingleton<INavigationService, NavigationService>()
                 .AddTransient<INavigationViewService, NavigationViewService>()
                 .AddSingleton<IPageService, PageService>()

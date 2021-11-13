@@ -1,11 +1,12 @@
 ﻿using WinAppSDKApp.Core.Models;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
-using WinAppSDKApp.Core.Contracts;
+using WinAppSDKApp.Core.Data;
 using System.Collections.Generic;
 using System.Data;
 using System;
 using System.Threading.Tasks;
+using WinAppSDKApp.Core.Logging;
 
 namespace WinAppSDKApp.Core.Services
 {
@@ -29,6 +30,16 @@ namespace WinAppSDKApp.Core.Services
         private const string qryGetProjects = "SELECT Id,Name,Description,StartDate,EndDate FROM Projects";
 
         private string _conn;
+        private ILoggingService _logger;
+
+        #endregion
+
+        #region Construction
+
+        public SqlServerDataService(ILoggingService logger)
+        {
+            _logger = logger;
+        }
 
         #endregion
 
@@ -72,39 +83,13 @@ namespace WinAppSDKApp.Core.Services
         #region Get
 
         /// <summary>
-        /// Returns the <see cref="Project"/> with the given Id.
-        /// </summary>
-        /// <param name="id">Id of the <see cref="Project"/></param>
-        /// <returns>A <see cref="Project"/></returns>
-        public Project GetProject(int id)
-        {
-            return GetObject<Project>(string.Format(qryGetProject, id));
-        }
-
-        /// <summary>
         /// Returns the <see cref="Project"/> with the given Id asynchronously.
         /// </summary>
         /// <param name="id">Id of the <see cref="Project"/></param>
         /// <returns>A <see cref="Project"/></returns>
         public async Task<Project> GetProjectAsync(int id)
         {
-            Project p = null;
-
-            await Task.Run(() =>
-            {
-                p = GetProject(id);
-            });
-
-            return p;
-        }
-
-        /// <summary>
-        /// Returns all <see cref="Project"/>s.
-        /// </summary>
-        /// <returns>A list of <see cref="Project"/> objects</returns>
-        public List<Project> GetProjects()
-        {
-            return GetObjects<Project>(qryGetProjects);
+            return await GetObjectAsync<Project>(string.Format(qryGetProject, id));
         }
 
         /// <summary>
@@ -113,14 +98,7 @@ namespace WinAppSDKApp.Core.Services
         /// <returns>A list of <see cref="Project"/> objects</returns>
         public async Task<List<Project>> GetProjectsAsync()
         {
-            List<Project> data = null;
-
-            await Task.Run(() =>
-            {
-                data = GetProjects();
-            });
-
-            return data;
+            return await GetObjectsAsync<Project>(qryGetProjects);
         }
 
         #endregion
@@ -139,14 +117,14 @@ namespace WinAppSDKApp.Core.Services
         /// <typeparam name="T">The type of the object, which must implement <see cref="IParsableFromDb"/></typeparam>
         /// <param name="query">The query to execute</param>
         /// <returns>A <typeparamref name="T"/></returns>
-        private T GetObject<T>(string query)
+        private async Task<T> GetObjectAsync<T>(string query)
             where T : IParsableFromDb, new()
         {
             T item = new T();
 
-            using (SqlDataReader reader = ExecuteReader(query, true, out bool hasResults))
+            using (SqlDataReader reader = await ExecuteReaderAsync(query, true))
             {
-                if (hasResults)
+                if (reader.HasRows)
                 {
                     _ = reader.Read();
                     item.Parse(reader);
@@ -162,14 +140,14 @@ namespace WinAppSDKApp.Core.Services
         /// <typeparam name="T">The type of the object, which must implement <see cref="IParsableFromDb"/></typeparam>
         /// <param name="query">The query to execute</param>
         /// <returns>A <see cref="List{T}"/></returns>
-        private List<T> GetObjects<T>(string query)
+        private async Task<List<T>> GetObjectsAsync<T>(string query)
             where T : IParsableFromDb, new()
         {
             List<T> lst = new List<T>();
 
-            using (SqlDataReader reader = ExecuteReader(query, false, out bool hasResults))
+            using (SqlDataReader reader = await ExecuteReaderAsync(query, false))
             {
-                if (hasResults)
+                if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
@@ -194,7 +172,7 @@ namespace WinAppSDKApp.Core.Services
         /// 1. In order to read data rows (if <paramref name="hasResult"/> = true), <see cref="SqlDataReader.Read"/> should be called for each row
         /// 2. The caller is responsible for closing the <see cref="SqlDataReader">reader</see>!
         /// </remarks>
-        private SqlDataReader ExecuteReader(string query, bool singleRow, out bool hasResult)
+        private async Task<SqlDataReader> ExecuteReaderAsync(string query, bool singleRow)
         {
             SqlDataReader reader = null;
             CommandBehavior behavior = CommandBehavior.CloseConnection;
@@ -210,12 +188,10 @@ namespace WinAppSDKApp.Core.Services
                 {
                     cmd.Connection.Open();
                     reader = cmd.ExecuteReader(behavior);
-                    hasResult = reader.HasRows;
                 }
                 catch (Exception ex)
                 {
-                    // log
-                    hasResult = false;
+                    await _logger.Log(ex.Message);
                 }
             }
 

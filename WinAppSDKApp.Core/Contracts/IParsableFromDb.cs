@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace WinAppSDKApp.Core.Contracts
+namespace WinAppSDKApp.Core.Data
 {
     internal interface IParsableFromDb
     {

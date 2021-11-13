@@ -1,4 +1,4 @@
-﻿using WinAppSDKApp.Core.Contracts;
+﻿using WinAppSDKApp.Core.Data;
 using Microsoft.Data.SqlClient;
 using System;
 
