@@ -1,6 +1,6 @@
 ﻿### WinAppSDK1.0.0 App
 A WinUI 3 application that is ported from a Template Studio solution to use the WindowsApp SDK 1.0.0 Preview 3.
-It contains all major features like activation, navigation, different activation handlers, SQL Server stuff, dialog handling and Toast Notifications.
+It contains all major features like activation, navigation, logging, different activation handlers, SQL Server stuff, dialog handling and Toast Notifications.
 
 ## File Structure
 ```
