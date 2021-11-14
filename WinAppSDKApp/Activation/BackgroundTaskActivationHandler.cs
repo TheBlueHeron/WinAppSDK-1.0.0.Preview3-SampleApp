@@ -1,5 +1,5 @@
 ﻿using WinAppSDKApp.BackgroundTasks;
-using WinAppSDKApp.Core.Helpers;
+using WinAppSDKApp.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

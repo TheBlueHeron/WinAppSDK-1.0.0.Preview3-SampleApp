@@ -9,8 +9,13 @@ using WinAppSDKApp.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using System;
+using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using WinAppSDKApp.Core.Logging;
+using Microsoft.Extensions.Logging;
+using UnhandledExceptionEventArgs = Microsoft.UI.Xaml.UnhandledExceptionEventArgs;
+using Windows.Storage;
 
 namespace WinAppSDKApp
 {
@@ -42,6 +47,8 @@ namespace WinAppSDKApp
         public App()
         {
             InitializeComponent();
+            CoreApplication.Suspending += OnSuspending;
+            CoreApplication.Resuming += OnResuming;
             UnhandledException += App_UnhandledException;
             Ioc.Default.ConfigureServices(ConfigureServices());
         }
@@ -63,7 +70,8 @@ namespace WinAppSDKApp
                 .AddTransient<IActivationHandler, BackgroundTaskActivationHandler>()
                 .AddTransient<IActivationHandler, ToastNotificationsService>()
 
-                .AddSingleton<ILoggingService, DebugLoggingService>() // Services
+                //ConfigureLogging(LogMode.Debug) // Services
+                .ConfigureLogging(LogMode.File, ResourceExtensions.AppTitleKey.GetLocalized(), ApplicationData.Current.LocalFolder.Path)
                 .AddSingleton<IThemeSelectorService, ThemeSelectorService>()
                 .AddSingleton<INavigationService, NavigationService>()
                 .AddTransient<INavigationViewService, NavigationViewService>()
@@ -91,7 +99,7 @@ namespace WinAppSDKApp
         /// </summary>
         private void OnBindingFailed(object sender, BindingFailedEventArgs e)
         {
-            throw new NotImplementedException();
+            _ = Ioc.Default.GetService<ILoggingService>().Log(LogLevel.Error, e.Message);
         }
 
         #endregion
@@ -133,13 +141,43 @@ namespace WinAppSDKApp
         #region Events
 
         /// <summary>
+        /// Invoked when application execution is being resumed.
+        /// </summary>
+        /// <param name="sender">The source of the resume request</param>
+        /// <param name="e">???</param>
+        private async void OnResuming(object sender, object e)
+        {
+            await SuspensionManager.RestoreAsync();
+        }
+
+        /// <summary>
+        /// Invoked when application execution is being suspended.
+        /// Application state is saved without knowing whether the application will be terminated or resumed with the contents of memory still intact.
+        /// </summary>
+        /// <param name="sender">The source of the suspend request</param>
+        /// <param name="e">Details about the suspend request</param>
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
+        {
+            SuspendingDeferral deferral = e.SuspendingOperation.GetDeferral();
+            await SuspensionManager.SaveAsync();
+            deferral.Complete();
+        }
+
+        /// <summary>
         /// Event handler for otherwise unhandled exceptions.
         /// </summary>
-        /// <param name="e">The <see cref="Microsoft.UI.Xaml.UnhandledExceptionEventArgs"/> with error details</param>
-        private void App_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
+        /// <param name="e">The <see cref="UnhandledExceptionEventArgs"/> with error details</param>
+        /// <seealso>https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.unhandledexceptioneventargs</seealso>
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            // TODO WTS: Please log and handle the exception as appropriate to your scenario
-            // For more info see https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.unhandledexceptioneventargs
+            try  // be safe and
+            {
+                _ = Ioc.Default.GetService<ILoggingService>().Log(LogLevel.Critical, e.Message, e.Exception);
+            }
+            finally
+            {
+                // die gracefully
+            }
         }
 
         #endregion

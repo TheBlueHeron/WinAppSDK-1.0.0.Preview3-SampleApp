@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace WinAppSDKApp.Core.Helpers
+namespace WinAppSDKApp.Core
 {
     public static class TaskExtensions
     {

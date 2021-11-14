@@ -7,6 +7,7 @@ using System.Data;
 using System;
 using System.Threading.Tasks;
 using WinAppSDKApp.Core.Logging;
+using Microsoft.Extensions.Logging;
 
 namespace WinAppSDKApp.Core.Services
 {
@@ -30,7 +31,7 @@ namespace WinAppSDKApp.Core.Services
         private const string qryGetProjects = "SELECT Id,Name,Description,StartDate,EndDate FROM Projects";
 
         private string _conn;
-        private ILoggingService _logger;
+        private readonly ILoggingService _logger;
 
         #endregion
 
@@ -191,7 +192,7 @@ namespace WinAppSDKApp.Core.Services
                 }
                 catch (Exception ex)
                 {
-                    await _logger.Log(ex.Message);
+                    await _logger.Log(LogLevel.Error,ex.Message);
                 }
             }
 
